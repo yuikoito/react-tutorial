@@ -6,8 +6,8 @@ import { HistoryData } from "../model/HistoryData";
 import { calculateWinner } from "../utils/calculateWinner";
 import { Board } from "./Board";
 
-export const Game:React.FC = () => {
-  const [status, setStatus] = useState<string>()
+export const Game: React.FC = () => {
+  const [status, setStatus] = useState<string>();
   const [history, setHistory] = useState<Array<HistoryData>>([
     { squares: Array(9).fill(null) },
   ]);
@@ -40,7 +40,7 @@ export const Game:React.FC = () => {
     } else {
       setStatus("Next player: " + (xIsNext ? "X" : "O"));
     }
-  },[winner, xIsNext])
+  }, [winner, xIsNext]);
 
   const moves = history.map((_, move) => {
     const desc = move ? "Go to move #" + move : "Go to game start";
@@ -52,13 +52,13 @@ export const Game:React.FC = () => {
   });
   return (
     <div className="game">
-    <div className="game-board">
-      <Board squares={current.squares} onClick={(i) => handleClick(i)} />
+      <div className="game-board">
+        <Board squares={current.squares} onClick={(i) => handleClick(i)} />
+      </div>
+      <div className="game-info">
+        <div>{status}</div>
+        <ol>{moves}</ol>
+      </div>
     </div>
-    <div className="game-info">
-      <div>{status}</div>
-      <ol>{moves}</ol>
-    </div>
-  </div>
   );
-}
+};

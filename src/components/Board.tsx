@@ -5,7 +5,7 @@ type Props = {
   squares: Array<SquareType>;
   onClick: (i: number) => void;
 };
-export const Board:React.FC<Props> = ({squares, onClick}) => {
+export const Board: React.FC<Props> = ({ squares, onClick }) => {
   const renderSquare = (i: number) => {
     return <Square value={squares[i]} onClick={() => onClick(i)} />;
   };
@@ -28,4 +28,4 @@ export const Board:React.FC<Props> = ({squares, onClick}) => {
       </div>
     </div>
   );
-}
+};
