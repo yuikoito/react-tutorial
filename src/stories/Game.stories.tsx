@@ -1,8 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Game } from '../components/Game';
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Game } from "../components/Game";
 
 export default {
-  title: 'components/Game',
+  title: "components/Game",
   component: Game,
 } as ComponentMeta<typeof Game>;
 
